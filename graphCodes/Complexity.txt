@@ -1,0 +1,42 @@
+**Time Complexity Chart for Data Structures & Algorithms (DSA)**
+
+| **Algorithm / Operation**      | **Best Case (Ω)** | **Average Case (Θ)** | **Worst Case (O)** | **Space Complexity (O)** |
+|--------------------------------|-------------------|---------------------|-------------------|-----------------|
+| **Sorting Algorithms**         |                   |                     |                   |                 |
+| Bubble Sort                    | O(n)             | O(n²)               | O(n²)             | O(1)            |
+| Selection Sort                 | O(n²)            | O(n²)               | O(n²)             | O(1)            |
+| Insertion Sort                 | O(n)             | O(n²)               | O(n²)             | O(1)            |
+| Merge Sort                     | O(n log n)       | O(n log n)          | O(n log n)        | O(n)            |
+| Quick Sort                     | O(n log n)       | O(n log n)          | O(n²)             | O(log n)        |
+| Heap Sort                      | O(n log n)       | O(n log n)          | O(n log n)        | O(1)            |
+| Counting Sort                  | O(n + k)         | O(n + k)            | O(n + k)          | O(k)            |
+| Radix Sort                     | O(nk)            | O(nk)               | O(nk)             | O(n + k)        |
+| Bucket Sort                    | O(n + k)         | O(n + k)            | O(n²)             | O(n)            |
+| **Searching Algorithms**       |                   |                     |                   |                 |
+| Linear Search                  | O(1)             | O(n)                | O(n)              | O(1)            |
+| Binary Search (Sorted)         | O(1)             | O(log n)            | O(log n)          | O(1)            |
+| Ternary Search                 | O(1)             | O(log n)            | O(log n)          | O(1)            |
+| **Data Structures (Operations)** |                   |                     |                   |                 |
+| Array (Search)                 | O(n)             | O(n)                | O(n)              | O(n)            |
+| Array (Insert/Delete)          | O(n)             | O(n)                | O(n)              | O(n)            |
+| Stack (Push/Pop)               | O(1)             | O(1)                | O(1)              | O(n)            |
+| Queue (Enqueue/Dequeue)        | O(1)             | O(1)                | O(1)              | O(n)            |
+| Priority Queue (Heap)          | O(1)             | O(log n)            | O(log n)          | O(n)            |
+| Hash Table (Unordered Map)     | O(1)             | O(1)                | O(n)              | O(n)            |
+| Binary Search Tree (BST)       | O(log n)         | O(log n)            | O(n)              | O(n)            |
+| Balanced BST (AVL/Red-Black)   | O(log n)         | O(log n)            | O(log n)          | O(n)            |
+| **Graph Algorithms**           |                   |                     |                   |                 |
+| BFS (Adjacency List)           | O(V + E)         | O(V + E)            | O(V + E)          | O(V + E)        |
+| DFS (Adjacency List)           | O(V + E)         | O(V + E)            | O(V + E)          | O(V + E)        |
+| Dijkstra's Algorithm           | O(V log V + E log V) | O(V log V + E log V) | O(V²)        | O(V + E)        |
+| Floyd-Warshall                 | O(n³)            | O(n³)               | O(n³)             | O(n²)           |
+| Kruskal’s Algorithm            | O(E log E)       | O(E log E)          | O(E log E)        | O(E)            |
+| Prim’s Algorithm               | O(V log V)       | O(V log V)          | O(V²)             | O(V + E)        
+| topological sort                                    0(V+E)
+
+**Legend:**
+- `Ω (Omega)`: Best Case
+- `Θ (Theta)`: Average Case
+- `O (Big-O)`: Worst Case
+- `V`: Number of vertices in a graph
+- `E`: Number of edges in a graph
