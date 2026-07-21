@@ -9,7 +9,7 @@ let initialOnes = 0;
         if (ch === '1') initialOnes++;
     }
 
-    let blocks = [];
+    let blocks = [];//[1  '1' 3 '1' 3] continuous blocks of zeroes
     let n = s.length;
     let i = 0;
 
