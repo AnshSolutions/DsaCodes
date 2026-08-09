@@ -1,30 +1,68 @@
 class Solution {
 public:
- int t[101][101][2];
-    int solve(vector<int>& piles, int i, int m, int person) {
+
+    int dp[101][101];
+
+    // solve(i, M) = current player ka maximum score difference
+    // (current player score - opponent score)
+    int solve(vector<int>& piles, int i, int M) {
+
         int n = piles.size();
-        if (i >= piles.size())
+
+        if (i >= n)
             return 0;
-        if(t[i][m][person]!=-1){
-            return t[i][m][person];
-        }
+
+        if (dp[i][M] != -1)
+            return dp[i][M];
+
         int stones = 0;
-        int result = (person == 1) ? -1 : INT_MAX;
-        for (int x = 1; x <= min(2 * m, n - i); x++) {
+        int best = INT_MIN;
+
+        // Current player can take 1 to 2*M piles
+        for (int x = 1; x <= min(2 * M, n - i); x++) {
+
             stones += piles[i + x - 1];
-            if (person == 1) {
-                result =
-                    max(result, stones + solve(piles, i + x, max(m, x), 0));
-            } else {
-                result = min(result, solve(piles, i + x, max(m, x), 1));
-            }
+
+            // I take 'stones'
+            //
+            // After this, opponent becomes current player.
+            // solve(...) = opponent's advantage.
+            //
+            // So my advantage =
+            // my stones - opponent's advantage
+
+            int current =
+                stones - solve(
+                    piles,
+                    i + x,
+                    max(M, x)
+                );
+
+            // I choose the best option
+            best = max(best, current);
         }
 
-        return t[i][m][person]= result;
+        return dp[i][M] = best;
     }
-    int stoneGameII(vector<int>& piles) { 
-        memset(t, -1, sizeof(t));
-        return solve(piles, 0, 1, 1);
-         
-     }
+
+    int stoneGameII(vector<int>& piles) {
+
+        memset(dp, -1, sizeof(dp));
+
+        int total = 0;
+
+        for (int x : piles) {
+            total += x;
+        }
+
+        // diff = Alice - Bob
+        int diff = solve(piles, 0, 1);
+
+        // Alice + Bob = total
+        // Alice - Bob = diff
+        //
+        // Alice = (total + diff) / 2
+
+        return (total + diff) / 2;
+    }
 };
